@@ -18,17 +18,6 @@ class AVPlayerModel {
     weak var currentAVPlayerInstance: AVPlayerViewController?
 }
 
-extension AVPlayerViewController {
-    override open func viewDidLoad() {
-        super.viewDidLoad()
-        self.showsPlaybackControls = false
-        self.allowsPictureInPicturePlayback = false
-        self.canStartPictureInPictureAutomaticallyFromInline = false
-        self.videoGravity = .resizeAspectFill
-        AVPlayerModel.shared.currentAVPlayerInstance = self
-    }
-}
-
 public struct HMSHLSPlayerView<VideoOverlay> : View where VideoOverlay : View {
     
     class Coordinator: HMSHLSPlayerDelegate, ObservableObject {
